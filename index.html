@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 50px;
+    }
+    #login-section {
+      margin-bottom: 20px;
+    }
+    #image-section {
+      display: none;
+    }
+    img {
+      width: 200px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="login-section">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
+    <button onclick="checkLogin()">Submit</button>
+    <p id="message" style="color: red;"></p>
+  </div>
+
+  <div id="image-section">
+    <h2>Welcome!</h2>
+    <img src="https://via.placeholder.com/200" alt="Image 1">
+    <img src="https://via.placeholder.com/200" alt="Image 2">
+    <img src="https://via.placeholder.com/200" alt="Image 3">
+  </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      
+      // Set your desired username and password here
+      const validUser = "admin";
+      const validPass = "12345";
+
+      if (user === validUser && pass === validPass) {
+        document.getElementById("login-section").style.display = "none";
+        document.getElementById("image-section").style.display = "block";
+      } else {
+        document.getElementById("message").innerText = "Invalid credentials. Try again.";
+      }
+    }
+  </script>
+
+</body>
+</html>
